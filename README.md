@@ -30,5 +30,7 @@ code interfaces and link to the correct static libraries.
 ## Resources
 
 https://www.leaseweb.com/labs/2013/06/creating-custom-debian-packages/
+
 http://www.fifi.org/doc/debconf-doc/tutorial.html
+
 http://manpages.ubuntu.com/manpages/trusty/man7/debconf-devel.7.html
