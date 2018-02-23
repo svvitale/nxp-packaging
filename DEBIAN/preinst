@@ -1,0 +1,13 @@
+#!/bin/bash
+ 
+# Source debconf library.
+. /usr/share/debconf/confmodule
+
+# Fetching configuration from debconf
+db_get nxprdlib/license
+
+if [ "$RET" != "Yes" ]; then
+  printf "\nSorry, you MUST accept the license agreement to install this library\n\n"
+  exit 1
+fi
+

@@ -1,0 +1,8 @@
+Package: nxprdlib
+Version: 4.010.03.001609
+Section: base
+Priority: optional
+Architecture: all
+Depends: debconf (>= 0.2.26), build-essential, cmake
+Maintainer: Michael Neurohr <michael.neurohr@nxp.com>
+Description: NFC Reader Library for Linux

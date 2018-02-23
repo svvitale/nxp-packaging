@@ -1,0 +1,20 @@
+#!/bin/sh
+ 
+# Exit on error
+set -e
+ 
+# Source debconf library.
+. /usr/share/debconf/confmodule
+
+db_get nxprdlib/license
+
+if [ "$RET" = "No" ]; then
+  # Clear the previous answer and re-ask
+  db_reset nxprdlib/license || true
+fi
+
+# Ask questions
+db_input critical nxprdlib/license || true
+ 
+# Show interface
+db_go || true

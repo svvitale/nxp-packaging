@@ -1,0 +1,3 @@
+*.swp
+usr/local/src/nxprdlib/*
+!.gitkeep

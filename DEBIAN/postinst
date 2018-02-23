@@ -1,0 +1,11 @@
+#!/bin/bash
+ 
+# Source debconf library. Recommended to ensure that questions actually get asked.  See debconf man page.
+. /usr/share/debconf/confmodule
+ 
+pushd /usr/local/src/nxprdlib > /dev/null
+CFLAGS=-fPIC cmake .
+make || true
+find -name '*.a' -exec cp {} /usr/local/lib/nxprdlib/ \;
+popd > /dev/null
+
