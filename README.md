@@ -10,22 +10,19 @@ This is where we ask the user to accept the license agreement.  The installation
 
 To build a `.deb` package using this template:
 
-1. Extract the contents of the `sw3693.zip` file into `usr/local/src/nxprdlib`
+1. Extract the contents of the `sw3693-ARCHIVED.zip` file into `usr/local/src/nxprdlib`
 1. Run `dpkg-deb --build nxp-packaging/ nxprdlib.deb` to generate the `nxprdlib.deb` file
 1. Install the package using `sudo dpkg -i nxprdlib.deb`
 1. After installation, source files can be found in `/usr/local/src/nxprdlib` and compiled static libraries can be found in `/usr/local/lib/nxprdlib`
-
-## Known issues
-
-1. The `NfcrdlibEx5_ISO15693` make target does not build and causes the installation to fail. **Workaround:** Remove this target 
-from `CMakeLists.txt` prior to building the package.
-1. The reader library has significantly changed in the latest version of `sw3693.zip`.  [nxppy](https://github.com/svvitale/nxppy) will need to be updated to use the new
-code interfaces and link to the correct static libraries.
 
 ## Development Tips
 
 `debconf` is used to prompt the user for license acceptance.  To clear the database of debconf question responses, this command comes in handy:
 `sudo echo PURGE | sudo debconf-communicate nxprdlib`
+
+Installing the package after it's built can be done with `sudo dpkg -i nxprdlib.deb`.
+
+Removing the package after it's installed can be done with `sudo dpkg --remove nxprdlib`.
 
 ## Resources
 
